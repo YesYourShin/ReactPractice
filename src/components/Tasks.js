@@ -1,32 +1,14 @@
 import React from 'react';
+import Task from './Task';
+import { useState } from 'react';
 
-const tasks = [
-    {
-        id: 1,
-        text: 'Lunch',
-        day: 'Feb 5th at 12:30pm',
-        reminder: true,
-    },
-    {
-        id: 2,
-        text: 'Doctors Appointment',
-        day: 'Feb 5th at 2:30pm',
-        reminder: true,
-    },
-    {
-        id: 3,
-        text: 'Dinner',
-        day: 'Feb 5th at 6:30pm',
-        reminder: true,
-    },
-];
-
-const Tasks = () => {
+const Tasks = ({ tasks }) => {
+    console.log(tasks);
     return (
         <div>
             <ul>
                 {tasks.map(task => {
-                    return <li>{task.text}</li>;
+                    return <Task key={task.id} task={task} />;
                 })}
             </ul>
         </div>
